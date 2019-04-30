@@ -1,4 +1,13 @@
-jQuery.get(window.location.href, null, addEventListeners)
+function getReq(theUrl, callback=null)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.onreadystatechange = function() { 
+        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+            callback(xmlHttp.responseText);
+    }
+    xmlHttp.open("GET", theUrl, true);
+    xmlHttp.send(null);
+}
 
 function addEventListeners(source) {
 	var pattern = /_Storage\.basic =  \'.*\'/;
@@ -15,9 +24,9 @@ function addEventListeners(source) {
 		$(elements[i].getElementsByTagName("a")).on("click", function(){
 			var data = JSON.parse($(this)[0].getAttribute("data-episode"));
 			alert("Poczekaj 5 sekund a odtwarzacz się pojawi");
-			jQuery.get("https://api4.shinden.pl/xhr/" + data["online_id"] + "/player_load?auth=" + result);
+			getReq("https://api4.shinden.pl/xhr/" + data["online_id"] + "/player_load?auth=" + result);
 			setTimeout(function () {
-				jQuery.get("https://api4.shinden.pl/xhr/" + data["online_id"] + "/player_show?auth=" + result + "&width=765", null, replace);
+				getReq("https://api4.shinden.pl/xhr/" + data["online_id"] + "/player_show?auth=" + result + "&width=765", replace);
 			}, 5000);
 		});
 	};
@@ -27,3 +36,5 @@ function replace(data) {
 	// put it to html code
 	document.getElementsByClassName("player-online box")[0].innerHTML = data;
 };
+
+getReq(window.location.href, addEventListeners)
