@@ -8,10 +8,14 @@ function addEventListeners(source) {
 	var i;
 
 	for (i = 1; i < elements.length; i++) {
+		// remove event liseners
+		clone = elements[i].getElementsByTagName("a")[0].cloneNode(true);
+		elements[i].replaceChild(clone, elements[i].getElementsByTagName("a")[0]);
+
 		$(elements[i].getElementsByTagName("a")).on("click", function(){
 			var data = JSON.parse($(this)[0].getAttribute("data-episode"));
-			jQuery.get("https://api4.shinden.pl/xhr/" + data["online_id"] + "/player_load?auth=" + result)
-
+			alert("Poczekaj 5 sekund a odtwarzacz się pojawi");
+			jQuery.get("https://api4.shinden.pl/xhr/" + data["online_id"] + "/player_load?auth=" + result);
 			setTimeout(function () {
 				jQuery.get("https://api4.shinden.pl/xhr/" + data["online_id"] + "/player_show?auth=" + result + "&width=765", null, replace);
 			}, 5000);
