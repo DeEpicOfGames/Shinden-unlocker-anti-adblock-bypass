@@ -4,4 +4,4 @@ Wtyczka ta obchodzi blokadę dla osób z adblockiem, wystarczy poczekać 5 sekun
 Firefox:
  pobierz wtyczkę z https://addons.mozilla.org/en-US/firefox/addon/shinden-unlocked/
 Chrome:
- pobierz "shinden unlocked - chrome.zip" z releases i je wypakuj, lub pobierz repozytorium i zmień nazwe "manifest chrome.json" na "manifest.json", a następnie wejdz do zarządzania rozszerzeniami, wybierz "Załaduj rozpakowane", wybierz odpowiedni folder
+ pobierz repozytorium i zmień nazwe pliku "manifest chrome.json" na "manifest.json", a następnie wejdz do zarządzania rozszerzeniami, wybierz "Załaduj rozpakowane", wybierz odpowiedni folder
