@@ -10,7 +10,7 @@
 	
 	"content_scripts": [
 		{
-			"matches": ["*://shinden.pl/episode/*"],
+			"matches": ["*://shinden.pl/episode/*, *://shinden.pl/epek/*"],
 			"js": ["byebyeshinden.js"]
 		}
 	],
