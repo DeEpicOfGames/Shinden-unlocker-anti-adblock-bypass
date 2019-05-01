@@ -3,7 +3,7 @@
 	"manifest_version": 2,
 	"name": "Shinden unlocker",
 	"homepage_url": "https://github.com/DeEpicOfGames/Shinden-unlocker-anti-adblock-bypass",
-	"version": "1.3.2",
+	"version": "1.3.4",
 	"icons":{
 		"16": "icons/favicon.png"
 	},

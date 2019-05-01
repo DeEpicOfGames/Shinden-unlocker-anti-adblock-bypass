@@ -1,6 +1,3 @@
-var data;
-var result;
-
 function getReq(theUrl, callback=null)
 {
     var xmlHttp = new XMLHttpRequest();
@@ -14,7 +11,7 @@ function getReq(theUrl, callback=null)
 
 function addEventListeners(source) {
 	var pattern = /_Storage\.basic =  \'.*\'/;
-	result = pattern.exec(source)[0].substr(19).slice(0, -1);
+	var result = pattern.exec(source)[0].substr(19).slice(0, -1);
 	
 	var elements = document.getElementsByClassName("ep-buttons");
 	var i;
@@ -25,21 +22,21 @@ function addEventListeners(source) {
 		elements[i].replaceChild(clone, elements[i].getElementsByTagName("a")[0]);
 
 		elements[i].getElementsByTagName("a")[0].addEventListener("click", function(event){
-			data = JSON.parse(event.target.getAttribute("data-episode"));
+			var data = JSON.parse(event.target.getAttribute("data-episode"));
 			getReq("https://api4.shinden.pl/xhr/" + data["online_id"] + "/player_load?auth=" + result);
-			countdown(5);
+			countdown(5, [data, result]);
 		});
 	};
 };
 
-function countdown(time)
+function countdown(time, array)
 {
 	if (time <= 0) {
-		getReq("https://api4.shinden.pl/xhr/" + data["online_id"] + "/player_show?auth=" + result + "&width=765", replace);
+		getReq("https://api4.shinden.pl/xhr/" + array[0]["online_id"] + "/player_show?auth=" + array[1] + "&width=765", replace);
 	} else {
 		document.getElementsByClassName("player-online box")[0].innerHTML = "<h2> Odliczanie: " + time.toString() + "</h2>";
 		setTimeout(function() {
-			countdown(time-1);
+			countdown(time-1, array);
 		}, 1000);
 	};
 };
