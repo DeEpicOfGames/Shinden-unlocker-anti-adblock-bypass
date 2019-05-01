@@ -1,5 +1,5 @@
 # Shinden-unlocker
-Wtyczka ta obchodzi blokadę dla osób z adblockiem, wystarczy poczekać 5 sekund po wyborze odtwarzacza (nie ma odliczania) a odtwarzacz i tak się uruchomi
+Wtyczka ta obchodzi blokadę dla osób z adblockiem, wystarczy poczekać 5 sekund po wyborze odtwarzacza
 # Instalacja
 Firefox:<br />
  pobierz wtyczkę z https://addons.mozilla.org/en-US/firefox/addon/shinden-unlocked/
