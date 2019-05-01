@@ -2,10 +2,10 @@
 	"description": "Wtyczka wysyła ręcznie zapytania do API shindena przez co obchodzi zabezpieczenia przyciwko adblockom, nadal należy czekać 5 sekund",
 	"manifest_version": 2,
 	"name": "Shinden unlocker",
-	"homepage_url": "https://github.com/DeEpicOfGames/Shinden-unlocker",
-	"version": "1.2.1",
+	"homepage_url": "https://github.com/DeEpicOfGames/Shinden-unlocker-anti-adblock-bypass",
+	"version": "1.3",
 	"icons":{
-		"48": "icons/favicon.png"
+		"16": "icons/favicon.png"
 	},
 	
 	"content_scripts": [
